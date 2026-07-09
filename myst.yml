@@ -1,0 +1,56 @@
+version: 1
+site:
+  template: book-theme
+  actions:
+  - title: "\U0001F4D6 Docs"
+    url: https://pdimens.github.io/harpy
+  options:
+    favicon: .report/favicon.ico
+    folders: true
+    hide_footer_links: true
+    logo: .report/logo.svg
+    logo_dark: .report/logo-dark.svg
+    logo_text: GIH Experiments
+project:
+  id: 061a5a69-4fa4-4a6b-9978-f64f0e625658
+  edit_url: 'null'
+  title: GIH Experiments
+  description: Harpy reports, powered by Jupyter and MyST.
+  toc:
+  - file: .report/index.md
+  - title: mouse
+    children:
+    - title: Align
+      children:
+      - title: bwa
+        children:
+        - pattern: mouse/Align/bwa/reports/**.ipynb
+    - title: fastq
+      children:
+      - title: preprocessed
+        children:
+        - pattern: mouse/fastq/preprocessed/reports/**.ipynb
+      - title: QC
+        children:
+        - pattern: mouse/fastq/QC/reports/**.ipynb
+    - title: phase
+      children:
+      - pattern: mouse/phase/reports/**.ipynb
+    - title: snps
+      children:
+      - pattern: mouse/snps/reports/**.ipynb
+  - title: rhiannon-degradation
+    children:
+    - title: rhiannon-align
+      children:
+      - pattern: rhiannon-degradation/rhiannon-align/reports/**.ipynb
+  - title: tripsacum
+    children:
+    - title: fastq
+      children:
+      - title: preproc
+        children:
+        - pattern: tripsacum/fastq/preproc/reports/**.ipynb
+      - title: qc
+        children:
+        - pattern: tripsacum/fastq/qc/reports/**.ipynb
