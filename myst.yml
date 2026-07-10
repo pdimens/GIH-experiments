@@ -39,9 +39,9 @@ project:
     - title: snps
       children:
       - pattern: mouse/snps/reports/**.ipynb
-  - title: rhiannon-degradation
+  - title: rs-degradation
     children:
-    - title: rhiannon-align
+    - title: align
       children:
       - pattern: rhiannon-degradation/rhiannon-align/reports/**.ipynb
   - title: tripsacum

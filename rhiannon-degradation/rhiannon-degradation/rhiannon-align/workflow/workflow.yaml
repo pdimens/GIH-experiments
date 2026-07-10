@@ -1,0 +1,45 @@
+Workflow:
+  name: align_strobe
+  harpy-version: '4.0'
+  linkedreads:
+    type: haplotagging
+    standardized:
+      BX: true
+      VX: false
+  reports:
+    skip: false
+  snakemake:
+    absolute: snakemake --snakefile /local/workdir/pd348/rhiannon-degradation/rhiannon-align/workflow/workflow.smk --configfile /local/workdir/pd348/rhiannon-degradation/rhiannon-align/workflow/workflow.yaml --profile /local/workdir/pd348/rhiannon-degradation/rhiannon-align/workflow/profile.yaml
+    relative: snakemake --snakefile rhiannon-align/workflow/workflow.smk --configfile rhiannon-align/workflow/workflow.yaml --profile rhiannon-align/workflow/profile.yaml
+    conda-envs:
+    - align
+    - qc
+Parameters:
+  illumina-format-old: true
+  distance-threshold: 50000
+  min-map-quality: 20
+  keep-unmapped: false
+  depth-windowsize: 50000
+Inputs:
+  reference: /local/workdir/genomes/Taeniopygia_guttata/GCF_048771995.1_Taeniopygia_guttata_genomic.fna.gz
+  fastq:
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/02-2-HQ2-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/02-2-HQ2-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/04-5-PD-bead10-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/04-5-PD-bead10-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/09-23-VD-bead10-DNA3-MEB5-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/09-23-VD-bead10-DNA3-MEB5-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/07-21-PD-bead10-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/07-21-PD-bead10-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/01-1-HQ1-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/01-1-HQ1-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/05-6-VD-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/05-6-VD-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/06-20-PD-bead10-DNA3-MEB5-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/06-20-PD-bead10-DNA3-MEB5-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/03-3-PD-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/03-3-PD-bead5-DNA1p5-MEB10-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/08-22-VD-bead5-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/08-22-VD-bead5-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/10-24-VD-bead10-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R2.fastq.gz
+  - /local/workdir/prm88/GenomicsInnovation/haplotagging/GI26002_10486428/2026_02_10_trimmed_fastqs/10-24-VD-bead10-DNA1p5-MEB5-10486428-23H72MLT3-L3_trimmed_R1.fastq.gz

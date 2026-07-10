@@ -1,0 +1,22 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Ignore everything
+*
+
+# Allow directories so Git can recurse into them
+!*/
+
+# ignore these specific directories
+_build/
+.environments/
+preprocTest/
+harpy/
+tuna_nextera/
+
+# Don't ignore Markdown or Jupyter notebooks
+!*.md
+!*.ipynb
+!*.yml
+!*.yaml
