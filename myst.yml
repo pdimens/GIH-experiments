@@ -20,32 +20,49 @@ project:
   - file: .report/index.md
   - title: mouse
     children:
-    - title: Align
-      children:
-      - title: bwa
-        children:
-        - pattern: mouse/Align/bwa/reports/**.ipynb
     - title: fastq
       children:
-      - title: preprocessed
+      - title: preproc
         children:
-        - pattern: mouse/fastq/preprocessed/reports/**.ipynb
+        - pattern: mouse/fastq/preproc/reports/**.ipynb
+      - title: qc
+        children:
+        - pattern: mouse/fastq/qc/reports/**.ipynb
+  - title: preprocTest
+    children:
+    - title: harpyPre
+      children:
+      - pattern: preprocTest/harpyPre/reports/**.ipynb
+    - title: qcFailTest
+      children:
+      - pattern: preprocTest/qcFailTest/reports/**.ipynb
+    - title: vanilla-harpy-method-with-qc-after
+      children:
+      - pattern: preprocTest/vanilla-harpy-method-with-qc-after/reports/**.ipynb
       - title: QC
         children:
-        - pattern: mouse/fastq/QC/reports/**.ipynb
-    - title: phase
+        - pattern: preprocTest/vanilla-harpy-method-with-qc-after/QC/reports/**.ipynb
+      - title: QC-cut-tail
+        children:
+        - pattern: preprocTest/vanilla-harpy-method-with-qc-after/QC-cut-tail/reports/**.ipynb
+      - title: QC-failedout
+        children:
+        - pattern: preprocTest/vanilla-harpy-method-with-qc-after/QC-failedout/reports/**.ipynb
+  - title: rhiannon-degradation
+    children:
+    - title: rhiannon-align
       children:
-      - pattern: mouse/phase/reports/**.ipynb
-    - title: snps
+      - pattern: rhiannon-degradation/rhiannon-align/reports/**.ipynb
+    - title: rhiannon-degradation
       children:
-      - pattern: mouse/snps/reports/**.ipynb
-  - title: rs-degradation
+      - title: rhiannon-align
+        children:
+        - pattern: rhiannon-degradation/rhiannon-degradation/rhiannon-align/reports/**.ipynb
+  - title: tripsacum
     children:
     - title: align
       children:
-      - pattern: rhiannon-degradation/rhiannon-align/reports/**.ipynb
-  - title: tripsacum
-    children:
+      - pattern: tripsacum/align/reports/**.ipynb
     - title: fastq
       children:
       - title: preproc
