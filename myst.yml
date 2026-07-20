@@ -28,6 +28,9 @@ project:
       - title: qc
         children:
         - pattern: mouse/fastq/qc/reports/**.ipynb
+    - title: align
+      children:
+      - pattern: mouse/align/reports/**.ipynb
   - title: rhiannon-degradation
     children:
     - title: rhiannon-align
