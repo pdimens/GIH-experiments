@@ -1,0 +1,37 @@
+Workflow:
+  name: align_bwa
+  harpy-version: 4.1.5
+  linkedreads:
+    type: haplotagging
+    standardized:
+      BX: true
+      VX: false
+  reports:
+    skip: false
+  snakemake:
+    absolute: snakemake --snakefile /local/workdir/pd348/mouse/align/workflow/workflow.smk --configfile /local/workdir/pd348/mouse/align/workflow/workflow.yaml --profile /local/workdir/pd348/mouse/align/workflow/profile.yaml
+    relative: snakemake --snakefile mouse/align/workflow/workflow.smk --configfile mouse/align/workflow/workflow.yaml --profile mouse/align/workflow/profile.yaml
+    conda-envs:
+    - align
+    - qc
+Parameters:
+  illumina-format-old: true
+  distance-threshold: 75000
+  min-map-quality: 30
+  keep-unmapped: false
+  depth-windowsize: 50000
+Inputs:
+  reference: /local/workdir/genomes/Mus_musculus/mm10/ENSEMBL/Mus_musculus.GRCm38.dna.toplevel.fa
+  fastq:
+  - /local/workdir/pd348/mouse/fastq/qc/260427_8_15b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_8_15b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_10_15b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_13_50b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_10_15b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_15_50b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_13_50b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_15_50b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_5_5b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_5_5b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_3_5b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+  - /local/workdir/pd348/mouse/fastq/qc/260427_3_5b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz

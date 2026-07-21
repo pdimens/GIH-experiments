@@ -1,0 +1,30 @@
+Workflow:
+  name: qc
+  harpy-version: 4.1.3
+  linkedreads:
+    type: haplotagging
+  reports:
+    skip: false
+  snakemake:
+    absolute: snakemake --snakefile /local/workdir/pd348/mouse/fastq/qc/workflow/workflow.smk --configfile /local/workdir/pd348/mouse/fastq/qc/workflow/workflow.yaml --profile /local/workdir/pd348/mouse/fastq/qc/workflow/profile.yaml
+    relative: snakemake --snakefile mouse/fastq/qc/workflow/workflow.smk --configfile mouse/fastq/qc/workflow/workflow.yaml --profile mouse/fastq/qc/workflow/profile.yaml
+    conda-envs:
+    - qc
+Parameters:
+  trim-adapters: /local/workdir/pd348/mouse/fastq/preproc/adapters.fasta
+  deduplicate: false
+  min-len: 50
+  max-len: 150
+Inputs:
+- /local/workdir/pd348/mouse/fastq/preproc/260427_10_15b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_10_15b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_8_15b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_8_15b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_5_5b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_3_5b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_5_5b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_3_5b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_13_50b_MqA_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_13_50b_MqA_10488528_23Y7JGLT4_L4.R2.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_15_50b_M2_10488528_23Y7JGLT4_L4.R1.fq.gz
+- /local/workdir/pd348/mouse/fastq/preproc/260427_15_50b_M2_10488528_23Y7JGLT4_L4.R2.fq.gz

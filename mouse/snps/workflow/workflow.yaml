@@ -1,0 +1,21 @@
+Workflow:
+  name: snp_mpileup
+  harpy-version: 4.1.5
+  reports:
+    skip: false
+  snakemake:
+    absolute: snakemake --snakefile /local/workdir/pd348/mouse/snps/workflow/workflow.smk --configfile /local/workdir/pd348/mouse/snps/workflow/workflow.yaml --profile /local/workdir/pd348/mouse/snps/workflow/profile.yaml
+    relative: snakemake --snakefile mouse/snps/workflow/workflow.smk --configfile mouse/snps/workflow/workflow.yaml --profile mouse/snps/workflow/profile.yaml
+    conda-envs: []
+Parameters:
+  ploidy: 2
+Inputs:
+  reference: /local/workdir/genomes/Mus_musculus/mm10/ENSEMBL/Mus_musculus.GRCm38.dna.toplevel.fa
+  regions: /local/workdir/pd348/mouse/snps/workflow/regions.snp
+  alignments:
+  - /local/workdir/pd348/mouse/align/260427_15_50b_M2_10488528_23Y7JGLT4_L4.bam
+  - /local/workdir/pd348/mouse/align/260427_13_50b_MqA_10488528_23Y7JGLT4_L4.bam
+  - /local/workdir/pd348/mouse/align/260427_5_5b_M2_10488528_23Y7JGLT4_L4.bam
+  - /local/workdir/pd348/mouse/align/260427_3_5b_MqA_10488528_23Y7JGLT4_L4.bam
+  - /local/workdir/pd348/mouse/align/260427_10_15b_M2_10488528_23Y7JGLT4_L4.bam
+  - /local/workdir/pd348/mouse/align/260427_8_15b_MqA_10488528_23Y7JGLT4_L4.bam
